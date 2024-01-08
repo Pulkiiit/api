@@ -35,6 +35,3 @@ app.use("/", (req, res) => {
 });
 app.use("/login", require("./routes/login"));
 app.use("/user", verifyToken, require("./routes/user"));
-// app.use('/create', (req, res) => {
-
-// })
