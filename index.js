@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const verifyToken = require("./middleware/authMiddleware");
 const sequelize = require("./config/dbConn");
-
+// usernmae should be unique and you have to use id for work
 const {
   DATABASE_NAME,
   DATABASE_USERNAME,

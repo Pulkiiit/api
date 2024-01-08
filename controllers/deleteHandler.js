@@ -2,11 +2,17 @@ const User = require("../model/user");
 
 const deleteHandler = async (req, res) => {
   const { id } = req.body;
+  if (!id)
+    return res.status(400).json({ message: "Missing required arguments: id" });
   const { userId } = req.params;
+  console.log(userId);
   const owner = await User.findOne({
-    attributes: ["id", "role"],
+    attributes: ["id", "role", "username"],
     where: { id: id },
   });
+  if (!owner) return res.status(400).json({ message: "Bad Request" });
+  if (owner.username != req.payload)
+    return res.status(400).json({ message: "Unauthorized Access" });
   if (owner.role === "Salesperson")
     return res.status(400).json({ message: "Unauthoried access" });
   if (owner.role === "SuperAdmin") {

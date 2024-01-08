@@ -8,7 +8,7 @@ const verifyToken = (req, res, next) => {
     "bcfewoubf32p479fb10934b09u134fb091uv904fb1043",
     (err, decoded) => {
       if (err) return res.sendStatus(403); //invlaid token
-      req.username = decoded.username;
+      req.payload = decoded.username;
       next();
     }
   );
