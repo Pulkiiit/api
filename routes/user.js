@@ -8,6 +8,6 @@ const deleteHandler = require("../controllers/deleteHandler");
 router.post("/create", createHandler);
 router.get("/self", infoHandler);
 router.get("/list", listHandler);
-router.post("/delete/:userId", deleteHandler);
+router.delete("/delete/:userId", deleteHandler);
 
 module.exports = router;
