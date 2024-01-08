@@ -30,6 +30,9 @@ sequelize
   .then(() => console.log("Successfully connected to the database!"))
   .catch(error => console.log("Failed to connect the database:", error));
 
+app.use("/", (req, res) => {
+  return res.status(200).json({ message: "ok" });
+});
 app.use("/login", require("./routes/login"));
 app.use("/user", verifyToken, require("./routes/user"));
 // app.use('/create', (req, res) => {
