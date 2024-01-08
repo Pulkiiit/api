@@ -22,7 +22,7 @@ const handleLogin = async (req, res) => {
       { username: username },
       "bcfewoubf32p479fb10934b09u134fb091uv904fb1043",
       {
-        expiresIn: "1h",
+        expiresIn: "2h",
       }
     );
     res.status(200).json({ token });
