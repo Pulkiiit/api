@@ -15,7 +15,7 @@ const listHandler = async (req, res) => {
       attributes: ["id", "username", "role", "rel"],
       where: { role: { [Op.ne]: "SuperAdmin" } },
     });
-    if (!users)
+    if (users.length < 1)
       return res.status(200).json({ message: "No users registered currently" });
     return res.status(200).json(users);
   } else if (owner.role === "BranchManager") {

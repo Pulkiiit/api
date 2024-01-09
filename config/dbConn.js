@@ -2,7 +2,7 @@ const { Sequelize } = require("sequelize");
 
 const DATABASE_NAME = "sequelize_db";
 const DATABASE_USERNAME = "root";
-const DATABASE_PASSWORD = "admin";
+const DATABASE_PASSWORD = "MyNewPass1!";
 
 const sequelize = new Sequelize(
   DATABASE_NAME,
